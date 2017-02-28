@@ -61,12 +61,32 @@ how long each task took to complete. Tasks can be grouped into 'projects' to
 keep them organized.
 
 > Answer here
+- an individual's name
+- a group name for the individual
+- a project name
+- a project description
+- a task name
+- a task description
+- a task responsibility, individual or individuals
+- a value for task completion, true or false
+- a length of time to complete each task, in minutes
+--> explanation: These entities will enable the user to track the progress of tasks and projects, while holding individuals accountable for their progress.
 
 ### 2. Photo Sharing App
 
 In this app, users can upload photos to their accounts and share them with others. These photos can be grouped into albums.
 
 > Answer here
+- an idividual's name
+- an individual's friend's namesto
+- an album name
+- meta data for photos
+	- a photo name
+	- a photo description
+	- a date
+	- a location
+	- names of individuals in the photo
+--> explanation: These entities will enable the user to share their photos with friend. The meta data will provide a means to organize the photos.
 
 ### 3. Home Automation Manager
 
@@ -76,6 +96,17 @@ information to turn on and off different lights and adjust the thermostat up
 and down.
 
 > Answer here
+- a name for the user's home(s)
+- a schedule
+	- a name for blocks of time
+	- a start time
+	- an end time
+- a measured tempurature, in degrees
+- a target temperature, in degrees
+- a time, in hours and minutes
+- a value for the HVAC state, on or off
+- a value for the light's states, on or off
+--> explanation: These entities will enable the user to monitor the temperature of their home(s) and make adjustments automatically by creating a schedule.
 
 ### 4. Sneaker Store
 
@@ -84,6 +115,12 @@ case), add those products to a cart, and save that cart as a past order once the
 purchase is complete.
 
 > Answer here
+- a product name
+- a product description
+- a quantity
+- a shopping cart, as an array/object
+- a name for the shopping cart
+--> explanation: The user will be able to view a product description and add a quantity to their shopping cart which can then be saved by creating a name.
 
 ## Representing Abstractions in Code
 
@@ -140,6 +177,8 @@ var exampleLine = {
 What are some advantages and disadvantages of choosing these representations? Please give at least one example of each.
 
 > Answer here
+- An advantage is that both the station and the rail entities use the same properties and values.
+- A disadvantage is that the descriptions are long and cumbersome and should perhaps be defined as a value outised of the object.
 
 ### 6. Doctor Appointment App
 
@@ -243,6 +282,8 @@ other? Are there any circumstances in which the other representation might be
 the better choice?
 
 > Answer here
+- Option one lends itself to being able to quickly view appointments grouped according to the doctor with whom they are scheduled, but dynamic appointment values are being attached to static doctor values.
+- Option two has the advantage of keeping the temporary appointment values separate, but patient values are in two places.
 
 ## Tying It Together
 
@@ -254,12 +295,40 @@ a.  What are some possible entities that your application might use to model its
     data? Please pick at least two, with at least two properties apiece.
 
   > Answer here
+  - a square
+  	- occupied, 'X' or 'O'
+  	- value if occupied, 1 or 4
+  - a row
+  	- are three squares occupied, yes or no
+  	- if yes, do the three squares constitute a win, yes or no
 
 b.  How might those entities be represented in JavaScript code?
 
   > Answer here
+  	var square1;
+
+  	var occupied1 = function(square1) {
+  		if (square1 === 'X') {
+  		return 1;
+  		} else if (square1 === 'O') {
+  		return 4;
+  		} else {
+  		return null
+  		}
+  	}
+
+  	var row1 = function(occupied1, occupied2, occupied3) {
+  		if (occupied1 + occupied2 + occupied3 = 3) {
+  		return "X wins!";
+  		} else if (occupied1 + occupied2 + occupied3 = 12) {
+  		return "O wins!";
+  		} else {
+  		break;
+  		}
+  	}
 
 c.  Justify your choices in a) and b). Why these entities? Why these
     representations?
 
   > Answer here
+  	The tic-tac-toe game will have to determine a winner. Each square will have a value. The sum of the three values in each row, column, or diagonal will indicate if someone has won and if so, if the winner is X or O.
