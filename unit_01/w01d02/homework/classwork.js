@@ -9,23 +9,23 @@
 // by assigning the appropriate variable a value of either `true` or `false`.
 
 // 1. true || false 
-//var resOne = true;
+var resOne = true;
 var resOne;
 
 // 2. null || ''
-//var resTwo = falsey;
+var resTwo = falsey;
 var resTwo;
 
 // 3. 'false' && true
-//var resThree = true;
+var resThree = true;
 var resThree;
 
 // 4. !!0
-//var resFour = false;
+var resFour = false;
 var resFour;
 
 // 5. !null && !undefined
-//var resFive = true;
+var resFive = true;
 var resFive;
 
 /// Flow Control ///
@@ -62,12 +62,22 @@ resSeven+=12
 //    calculates the sum of all of those numbers, storing the result in the
 //    variable `resEight`.
 var resEight;
+
+var resEight = 0;
+
+for (var i = 0; i <= 1856; i++) { 
+      resEight += i;
+}
 // Replace This Comment With Your Code
 
 // 9. Using a `for` loop, calculate the sum of all multiples of 7 between 0
 //    (inclusive) and 1000 (exclusive); store the result in the variable
 //    `resNine`.
 var resNine;
+
+var resNine = 0;
+
+for (var 1 = 0; i <= )
 // Replace This Comment With Your Code
 
 // 10. Using whatever code you like, calculate n^n for each value from n from 1
