@@ -1,4 +1,5 @@
 window.onload = function() {
+<<<<<<< HEAD
 	var firstButton = document.getElementById('button1');
   		firstButton.addEventListener("click", function() {
   		alert('you have clicked button one');
@@ -18,4 +19,6 @@ window.onload = function() {
   			var p = document.getElementsByTagName('p')[0];
   			b.removeChild(p);
   	});
+=======
+>>>>>>> 8d1d37730514d4121bae9ab133acfe8500e444a7
 }
