@@ -28,19 +28,26 @@ $(function () {
             $(this).remove();
         });
     });
-});
 
   var newHomes = [
     {address: "27569 Cedarwood Drive", sf: "2,535", bedrooms: 3, baths: 2.5, price: "$496,500"},
     {address: "316 Annandale Drive", sf: "1,326", bedrooms: 4, baths: 2, price: "$275,000"},
     {address: "251 Grandview Road", sf: "3,800", bedrooms: 3, baths: 2, price: "$699,900"},
     {address: "28571 Manitoba", sf: "2,960", bedrooms: 4, baths: 3.5, price: "$775,000"}
-];
+  ];
   
+  newHomes.forEach(function (home) {
+    alert(home.address);
+    var homeInfoRowHTML = "<tr><td>" + home.address + "</td><td>" + home.sf + "</td><td>" + home.bedrooms + "</td><td>" + home.baths + "</td><td>" + home.price + "<td><button class='btn btn-xs btn-danger'>Remove</button></td>";
+    var $homeInfoRowHTML = $(homeInfoRowHTML);
+    $('#homes tbody').append($homeInfoRowHTML);
+    alert($homeInfoRowHTML);
+  });
+
   // var $newHome = $("<tr><td>" + newHomes[i].address + "</td><td>" + newHomes[i].sf + "</td><td>" + newHomes[i].bedrooms + "</td><td>" + newHomes[i].baths + "</td><td>" + newHomes[i].price + "</td></tr>");
-  var $tbody = $('tbody')
-  $('#addHome').on('click', function () {
-      for (i = 0; i < newHomes.length; i++) {
-          var $newHome = $("<tr><td>" + newHomes[i].address + "</td><td>" + newHomes[i].sf + "</td><td>" + newHomes[i].bedrooms + "</td><td>" + newHomes[i].baths + "</td><td>" + newHomes[i].price + "</td></tr>");
-          $newHome.appendTo('tbody');
-  }});
+  // var $tbody = $('tbody')
+  // $('#addHome').on('click', function () {
+  //     for (i = 0; i < newHomes.length; i++) {
+  //         var $newHome = $("<tr><td>" + newHomes[i].address + "</td><td>" + newHomes[i].sf + "</td><td>" + newHomes[i].bedrooms + "</td><td>" + newHomes[i].baths + "</td><td>" + newHomes[i].price + "</td></tr>");
+  //         $newHome.appendTo('tbody');
+});
