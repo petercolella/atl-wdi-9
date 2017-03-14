@@ -7,17 +7,26 @@ app.set("view engine", "hbs");
 app.set('views', './views');
 
 app.get('/', function(req, res) {
-	res.send('Welcome to Pizza Express!');
+	var indexPage = 'Welcome to Pizza Express!';
+	res.render('index.hbs', {
+		data: indexPage
+	});
 });
 
 app.get('/topping/:type', function(req, res, next) {
-
-    res.send(`${req.params.type} pizza! Good choice.`);
+	var pizzaTopping = `${req.params.type}`;
+    res.render('toppings.hbs', {
+    	data: pizzaTopping
+    });
 });
 
 app.get('/order/:amount/:size', function(req, res, next) {
+	var orderAmountSize = `${req.params.amount} ${req.params.size}`;
+	var orderSize = `${req.params.size}`;
+   res.render('order.hbs', {
+   		data: orderAmountSize
 
-   res.send(`Your order for ${req.params.amount} ${req.params.size} pizzas will be ready in 1 minute!`);
+   	});
 });
 
 
