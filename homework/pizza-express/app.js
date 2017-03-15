@@ -8,6 +8,7 @@ app.set('views', './views');
 
 var orderController = require('./controllers/order_controller.js');
 var toppingsController = require('./controllers/toppings_controller.js');
+var notfoundController = require('./controllers/notfound_controller.js');
 
 app.get('/', function(req, res) {
 	var indexPage = 'Welcome to Pizza Express!';
@@ -18,6 +19,7 @@ app.get('/', function(req, res) {
 
 app.use('/order', orderController);
 app.use('/topping', toppingsController);
+app.use('*', notfoundController);
 
 // app.get('/topping/:type', function(req, res, next) {
 // 	var pizzaTopping = `${req.params.type}`;
