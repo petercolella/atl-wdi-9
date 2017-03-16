@@ -8,6 +8,15 @@ var app         = express();
 var port        = process.env.PORT || 3000;
 /* set up the application params*/
 
+var bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+var todosController = require('./controllers/todos_controller.js');
+app.use('/todos', todosController);
+
 // log
 app.use( logger('dev'));
 
@@ -20,21 +29,7 @@ app.get('/', function(req,res) {
 });
 
 /* INDEX TODOS */
-app.get('/todos', function(req,res) {
-  var seededTodos = [
-    {
-      description: "get beer",
-      urgent: true
-    }, {
-      description: "dry cleaning",
-      urgent: false
-    }
-  ];
 
-  res.render('todos/index', {
-    todos: seededTodos
-  });
-});
 
 // Start server
 app.listen(port, function() {
