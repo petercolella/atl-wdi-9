@@ -1,6 +1,4 @@
-var calculate = function(hourhand, minutehand) {
-
-};
+I tried and failed.
 
 // DO NOT EDIT BELOW THIS LINE //
 module.exports = {
