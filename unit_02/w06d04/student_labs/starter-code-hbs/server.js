@@ -7,8 +7,13 @@ var hbs         = require('hbs');
 var app         = express();
 var port        = process.env.PORT || 3000;
 /* set up the application params*/
-
 var bodyParser = require('body-parser');
+// include the method-override package
+var methodOverride = require('method-override');
+//...
+// after the app has been defined
+// use methodOverride.  We will be adding a query parameter to our delete form named _method
+app.use(methodOverride('_method'));
 
 app.use(bodyParser.urlencoded({
     extended: true

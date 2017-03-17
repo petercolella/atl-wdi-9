@@ -32,4 +32,27 @@ router.post('/', function(req, res){
   	res.redirect('/todos');
 });
 
+router.delete('/:id', function(req, res) {
+    data.seededTodos.splice(req.params.id, 1); // remove the item from the array
+    res.redirect('/todos');  // redirect back to the index route
+});
+
+router.get('/:id/edit', function(req, res){
+  res.render('todos/edit', {
+    todo: {
+      description: data.seededTodos[req.params.id].description,
+      urgent: data.seededTodos[req.params.id].urgent,
+      id: req.params.id
+    }
+  });
+});
+
+router.put('/:id', function(req, res) {
+  var todoToEdit = data.seededTodos[req.params.id];
+
+  todoToEdit.description = req.body.description;
+  todrr.
+  res.redirect('/todos');
+})
+
 module.exports = router;
