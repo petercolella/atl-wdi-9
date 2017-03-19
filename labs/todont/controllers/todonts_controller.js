@@ -34,7 +34,7 @@ router.delete('/:id', function(req, res) {
     res.redirect('/todonts');
 });
 
-router.get('/todonts/:id/edit', function(req, res) {
+router.get('/:id/edit', function(req, res) {
 	res.render('todonts/edit', {
 		todont: {
 			description: data.seededToDonts[req.params.id].description,
@@ -43,6 +43,12 @@ router.get('/todonts/:id/edit', function(req, res) {
 		}
 	});
 });
+
+router.put('/:id', function(req, res) {
+	todontToEdit = data.seededToDonts[req.params.id];
+
+	
+})
 
 router.delete('/todonts/:id', function(req, res) {
 	res.send('DELETE');

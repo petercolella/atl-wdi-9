@@ -8,7 +8,7 @@ var app = express();
 
 app.use(express.static('public'))
 
-mongoose.connect('mongodb://localhost/giphy');
+// mongoose.connect('mongodb://localhost/giphy');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
