@@ -17,14 +17,14 @@ router.get('/:id', function(req,res) {
   var todo = data.seededTodos[req.params.id];
 
   res.render('todos/show', {
-    todo: todo
+    todo: todor
   });
 });
 
 router.post('/', function(req, res){
 	var newTodo = {
 		description: req.body.description,
-		urgent: req.body.urgent
+		urgent: req.body.urgent,
 	};
 
 	data.seededTodos.push(newTodo);
@@ -51,7 +51,8 @@ router.put('/:id', function(req, res) {
   var todoToEdit = data.seededTodos[req.params.id];
 
   todoToEdit.description = req.body.description;
-  todrr.
+  todoToEdit.urgent = req.body.urgent;
+
   res.redirect('/todos');
 })
 

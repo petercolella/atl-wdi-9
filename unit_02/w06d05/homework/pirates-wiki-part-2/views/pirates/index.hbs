@@ -3,6 +3,16 @@
 <ul>
   {{#each pirates}}
     <li><a href="/pirates/{{@index}}"><h2>{{name}}</h2></a></li>
+    <!-- <br> -->
+    <div style="display: inline-flex;">
+	    <form action="/pirates/{{@index}}/edit">
+	    	<input type="submit" value="EDIT {{name}}">
+	    </form>
+	    <form action="/pirates/{{@index}}?_method=DELETE" method="POST">
+	      <input type="submit" value="DELETE {{name}}"/>
+	    </form>
+    </div>
+    <br>
   {{/each}}
 </ul>
 
