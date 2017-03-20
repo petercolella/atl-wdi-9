@@ -42,7 +42,9 @@ router.get('/:id', function(req, res){
 
 
 // Make a GET route '/new' that will simply render a form to create a new Pokemon
-
+router.get('pokemon/new', function(req, res){
+	res.render("pokemon/new.hbs");
+});
 
 
 
@@ -53,18 +55,56 @@ router.get('/:id', function(req, res){
 // CREATE
 //***************************
 //make a POST route '/' to create a New Pokemon
+router.post('/', function(req, res){
+	var newPokemon = {
+		name: req.body.name,
+		img: req.body.img,
+		type: req.body.type,
+		hp: req.body.stats.hp,
+		attack: req.body.stats.attack,
+		defense: req.body.stats.defense,
+		spattatack: req.body.stats.spattatack,
+		spdefense: req.body.stats.spdefense,
+		speed: req.body.stats.speed,
+	};
 
+	data.push(newPokemon);
+  	
+  	res.redirect('/pokemon');
+});
 
 //***************************
 // UPDATE
 //***************************
+router.put('/:id', function(req, res){
+	var pokemonToEdit = pokemon[req.params.id];
 
+	pokemonToEdit.name = req.body.name;
+	pokemonToEdit.img = req.body.img;
+	pokemonToEdit.type = req.body.type;
+
+	res.redirect('/pokemon')
+})
 //***************************
 // DELETE
 //***************************
 //make a DELETE route '/:index' that will delete the Pokemon at this index.
-
-
+router.delete('/:id', function(req, res){
+	pirates.splice(req.params.id, 1);
+	res.redirect('/pokemon');
+})
+//==============================
+// EDIT
+//==============================
+router.get('/:id/edit', function(req, res){
+	res.render('pokemon/edit', {
+		pokemon: {
+			name: pokemon[req.params.id].name,
+			img: pokemon[req.params.id].images,
+			type: pokemon[req.params.id].type,
+		}
+	});
+});
 
 //***************************
 // EXPORTS
