@@ -5,12 +5,13 @@
 var express = require('express');
 var app = express();
 var hbs = require('hbs');
+var methodOverride = require('method-override')
 //***************************
 // MIDDLEWARE
 //***************************
 //set up your middleware and view engine here
 app.set('view engine', 'hbs');
-
+app.use(methodOverride('_method'));
 //***************************
 // CONTROLLERS
 //***************************

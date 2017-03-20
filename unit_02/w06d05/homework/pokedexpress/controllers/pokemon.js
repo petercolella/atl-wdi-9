@@ -90,7 +90,7 @@ router.put('/:id', function(req, res){
 //***************************
 //make a DELETE route '/:index' that will delete the Pokemon at this index.
 router.delete('/:id', function(req, res){
-	pirates.splice(req.params.id, 1);
+	data.splice(req.params.id, 1);
 	res.redirect('/pokemon');
 })
 //==============================
