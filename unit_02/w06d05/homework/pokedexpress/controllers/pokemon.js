@@ -31,7 +31,13 @@ router.get('/', function(req, res){
 // Make a GET route '/index/:index' that will render the Pokemon's show page at that :index
 //
 // Example: a user goes to 'localhost:3000/pokemon/index/0' in the browser and data for Bulbasaur (the pokemon at index 0) will be displayed.
+router.get('/:id', function(req, res){
+	var showPokemon = data[req.params.id];
 
+	res.render("pokemon/show.hbs", {
+		pokemon: showPokemon
+	});
+})
 
 
 
