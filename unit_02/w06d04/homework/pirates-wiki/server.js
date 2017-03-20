@@ -5,7 +5,7 @@ var hbs = require('hbs');
 app.set('view engine', 'hbs');
 
 
-var pirateController = require('./controllers/pirates.js');
+/tvar pirateController = require('./controllers/pirates.js');
 app.use('/pirates', pirateController);
 
 

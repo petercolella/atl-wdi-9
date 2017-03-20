@@ -99,9 +99,10 @@ router.delete('/:id', function(req, res){
 router.get('/:id/edit', function(req, res){
 	res.render('pokemon/edit', {
 		pokemon: {
-			name: pokemon[req.params.id].name,
-			img: pokemon[req.params.id].images,
-			type: pokemon[req.params.id].type,
+			name: data[req.params.id].name,
+			img: data[req.params.id].img,
+			type: data[req.params.id].type,
+			stats: data[req.params.id].stats,
 		}
 	});
 });

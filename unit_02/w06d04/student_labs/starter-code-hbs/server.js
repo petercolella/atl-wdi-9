@@ -23,7 +23,7 @@ var todosController = require('./controllers/todos_controller.js');
 app.use('/todos', todosController);
 
 // log
-app.use( logger('dev'));
+app.use( logger('dev'));vav
 
 /*Views*/
 app.set('view engine', 'hbs');

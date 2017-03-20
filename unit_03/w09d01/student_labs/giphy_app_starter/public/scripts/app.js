@@ -1,23 +1,20 @@
+// Done by Danny
 $(function() {
 
+  $('.get-gif').on('click', function() { //recognize click event
+    $.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&rating=pg') //ajax gets resource as json object-asynchronous request
+      .done(function(giphyResponse) { //done callback
+        console.log(giphyResponse.data.image_url);
+        $('.image-jumbotron').attr('src', giphyResponse.data.image_url); //adds image attribute to DOM
+      })
+      .fail(function (data) { //fail callback
+        console.log(data.data.errorMessage);
+      });
+    })
+  
 })
 
-$('.get-gif').on('click', function() {
-  $.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&rating=pg')
-    .done(function(data) {
-      var giphy = data.data;
-      // var giphyAPI = JSON.parse(giphy);
-      // var imageUrl = giphyAPI.data.image_url;
-      var imageUrl = giphy.image_url;
-      console.log(imageUrl);
-      // var imageUrl = giphy.image_url;
-      // console.log(imageUrl);
-// manipulate dom
-      $('.image-jumbotron').attr('src', imageUrl);
-    });
-  //manipulate dom now
-});
-
+// Done by Hassan
 $('.save-gif').on('click', function() {
   var gifUrl = $('.image-jumbotron').attr('src');
   console.log(gifUrl);
