@@ -13,12 +13,23 @@ var Tamagotchi = function(name, creatureType){
 		console.log('WAHH!!!');
 	}
 	this.puke = function(){
-		this.foodInTummy--;
+		this.health--;
 		console.log('New, new value of food in tummy: ' + this.foodInTummy + ' plus a crying sound');
 	}
 	this.yawn = function(){
 		this.restedness--;
 		console.log(this.name + ' has current restedness of: ' + this.restedness);
+	}
+	this.start = function(){
+		var scope = this;
+		scope.hungerTimer = setInterval(function(){ scope.cry(); }, 6000);
+		scope.yawnTimer = setInterval(function(){ scope.yawn(); }, 10000);
+		scope.sickTimer = setInterval(function(){ scope.puke(); }, 20000);
+	}
+	this.stop = function(){
+		clearInterval(this.hungerTimer);
+		clearInterval(this.yawnTimer);
+		clearInterval(this.sickTimer);
 	}
 }
 
