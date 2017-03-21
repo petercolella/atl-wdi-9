@@ -12,21 +12,36 @@ var Tamagotchi = function(name, creatureType){
 		console.log(this.name + "'s new value of food in tummy: " + this.foodInTummy);
 		console.log('WAHH!!!');
 	}
+	this.puke = function(){
+		this.foodInTummy--;
+		console.log('New, new value of food in tummy: ' + this.foodInTummy + ' plus a crying sound');
+	}
+	this.yawn = function(){
+		this.restedness--;
+		console.log(this.name + ' has current restedness of: ' + this.restedness);
+	}
 }
 
 //create new Tamagotchis
 // var madeTamagotchi1 = new Tamagotchi();
 // var madeTamagotchi2 = new Tamagotchi();
-var madeTamagotchi3 = new Tamagotchi('Bashful', 'basidiomycota');
+// var madeTamagotchi3 = new Tamagotchi('Bashful', 'basidiomycota');
 var madeTamagotchi4 = new Tamagotchi('Doc', 'zygomycota');
+var madeTamagotchi5 = new Tamagotchi('Dopey', 'chytrydiomycota');
+var madeTamagotchi6 = new Tamagotchi('Grumpy', 'eomycota');
 
 // madeTamagotchi1.cry();
 // madeTamagotchi2.cry();
-madeTamagotchi3.cry();
+// madeTamagotchi3.cry();
 madeTamagotchi4.cry();
+madeTamagotchi5.puke();
+madeTamagotchi6.yawn();
 
 //test out your Tamagotchies below via console.logs
 // console.log('madeTamagotchi1');
 // console.log('madeTamagotchi2');
-console.log('madeTamagotchi3');
-console.log('madeTamagotchi4');
+// console.log('madeTamagotchi3');
+// console.log('madeTamagotchi4');
+console.log('madeTamagotchi5');
+console.log('madeTamagotchi6');
+
