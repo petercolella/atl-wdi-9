@@ -28,7 +28,15 @@ function loginUser(req, res, next) {
 }
 
 function authorize(req, res, next) {
+  var currentUser = req.session.currentUser
 
+    var sessionStillValid = req.session.experationTime > Date.now();
+
+  if (!currentUser || currentUser._id !== req.params.id || !sessionStillValid) {
+    res.send({status: 401})
+  } else {
+    next()
+  }
 };
 
 module.exports = {

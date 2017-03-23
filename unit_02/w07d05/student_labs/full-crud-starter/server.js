@@ -2,6 +2,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
+var hbs = require('hbs');
+var morgan = require('morgan');
+var methodOverride = require('method-override');
+
+app.set('view engine', 'hbs');
+app.use(methodOverride('_method'));
 
 
 app.use(bodyParser.json());
@@ -10,9 +16,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var usersController = require("./controllers/usersController.js");
 app.use('/users', usersController);
 
+var projectIdeasController = require("./controllers/projectIdeasController");
+app.use('/users/:userId/project-ideas', projectIdeasController)
+
 // Mongoose stuff
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/express-mongoose-lesson-starter');
+mongoose.connect('mongodb://localhost/full-crud-starter');
 
 // Now that we're connected, let's save that connection to the database in a variable.
 var db = mongoose.connection;
