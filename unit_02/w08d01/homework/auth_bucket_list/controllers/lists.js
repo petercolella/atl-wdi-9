@@ -75,7 +75,23 @@ router.put('/:id', function(req, res){
 // DELETE
 //======================
 //create a DELETE "/:id" route that deletes the list item
+router.delete('/:id', function(req, res) {
+  User.findById(req.params.userId)
+    .exec(function (err, user){
+      if (err) { console.log(err); }
 
+      user.newList.id(req.params.id).remove();
+
+      user.save(function (err) {
+        if (err) console.log(err);
+        console.log('Bucket List item was removed')
+      });
+
+      res.render('lists/index', {
+        user: user
+      });
+    });
+});
 
 //======================
 // EXPORTS
