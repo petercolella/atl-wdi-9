@@ -37,7 +37,18 @@ router.post('/', function(req, res){
 // EDIT
 //======================
 //create a GET "/:id/edit" route that renders the list's edit page
+router.get('/:id/edit', function(req, res) {
+  User.findById(req.params.userId)
+    .exec(function (err, user){
+      if (err) { console.log(err); }
+      const newList = user.newList.id(req.params.id);
 
+      res.render('lists/edit', {
+        newList: newList,
+        user: user
+      });
+    });
+});
 
 //======================
 // UPDATE
