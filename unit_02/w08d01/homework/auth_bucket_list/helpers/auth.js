@@ -33,7 +33,7 @@ function authorized(req, res, next) {
   var currentUser = req.session.currentUser
 
   if (!currentUser || currentUser._id !== req.params.id) {
-    es.send({status: 404})
+    res.send({status: 404})
   } else {
     next()
   }
