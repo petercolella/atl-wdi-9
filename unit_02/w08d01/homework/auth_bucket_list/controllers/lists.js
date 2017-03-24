@@ -54,7 +54,22 @@ router.get('/:id/edit', function(req, res) {
 // UPDATE
 //======================
 //create a PUT "/:id" route that saves the changes from the list.
+router.put('/:id', function(req, res){
+  User.findById(req.params.userId)
+    .exec(function (err, user){
+      if (err) { console.log(err); }
+      const newList = user.newList.id(req.params.id);
 
+      newList.name = req.body.name
+      newList.completed = req.body.completed
+      user.save();
+
+      res.render('lists/show', {
+        newList: newList,
+        user: user
+      });
+    });
+});
 
 //======================
 // DELETE
