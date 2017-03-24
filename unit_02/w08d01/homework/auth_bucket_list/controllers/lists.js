@@ -2,13 +2,36 @@
 // REQUIREMENTS
 //======================
 //require express,router,  mongoose, List schema, User schema, authHelpers
-
+var express = require('express');
+var router = express.Router({mergeParams: true});
+var User = require('../models/user.js');
+var List = require('../models/list.js');
+var authHelpers = require('../helpers/auth.js');
 
 //======================
 // CREATE
 //======================
 //create a POST "/" route that saves the list item to the logged in user
+router.post('/', function(req, res){
+  User.findById(req.params.userId)
+    .exec(function (err, user){
+      if (err) { console.log(err); }
 
+      const newList = {
+        name: req.body.name,
+        completed: req.body.completed
+      }
+
+      user.list.push(newList)
+
+      user.save(function (err) {
+        if (err) console.log(err);
+        console.log('Bucket List item created')
+      });
+
+      res.redirect('/users')
+    });
+});
 
 //======================
 // EDIT
