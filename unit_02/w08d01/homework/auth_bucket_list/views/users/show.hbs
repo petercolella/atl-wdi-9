@@ -1,1 +1,35 @@
-<h1>User Name's Summer Bucket List</h1>
+<h1>{{user.username}}'s Summer Bucket List</h1>
+
+<h2>Username: {{user.username}}</h2>
+
+<ul>
+  {{#each user.list}}
+    <li>Name: {{list.name}}</li>
+	<li>Completed: {{list.completed}}</li>
+	<a href="/users/{{user.id}}/lists/{{newList.id}}/edit">Edit Bucket List Item</a>
+	<form action="/users/{{user.id}}/lists/{{newList.id}}?_method=DELETE" method="POST">
+  		<input type="submit" value="Delete Bucket List Item"/>
+	</form>
+  {{/each}}
+</ul>
+
+<a href="/users/{{user.id}}/lists/new">Add a new Bucket List item</a>
+
+<!-- <form action="/users/{{user.id}}/lists/" method="POST">
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input type="text" name="name" value="{{newList.name}}"/>
+  </div>
+  <div>
+    <label for="completed">
+      Completed?
+    </label>
+    <span>YES<input type="radio" name="completed" value="true" checked /></span>
+    <span>NO<input type="radio" name="completed" value="false"/></span>
+  </div>
+  <div>
+    <input type="submit" value="Add a new Bucket List item"/>
+  </div>
+</form> -->

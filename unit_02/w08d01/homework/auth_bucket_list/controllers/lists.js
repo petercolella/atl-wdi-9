@@ -13,7 +13,7 @@ var authHelpers = require('../helpers/auth.js');
 //======================
 //create a POST "/" route that saves the list item to the logged in user
 router.post('/', function(req, res){
-  User.findById(req.params.userId)
+  User.findById(req.params.id)
     .exec(function (err, user){
       if (err) { console.log(err); }
 
@@ -38,7 +38,7 @@ router.post('/', function(req, res){
 //======================
 //create a GET "/:id/edit" route that renders the list's edit page
 router.get('/:id/edit', function(req, res) {
-  User.findById(req.params.userId)
+  User.findById(req.params.id)
     .exec(function (err, user){
       if (err) { console.log(err); }
       const newList = user.newList.id(req.params.id);
@@ -55,7 +55,7 @@ router.get('/:id/edit', function(req, res) {
 //======================
 //create a PUT "/:id" route that saves the changes from the list.
 router.put('/:id', function(req, res){
-  User.findById(req.params.userId)
+  User.findById(req.params.id)
     .exec(function (err, user){
       if (err) { console.log(err); }
       const newList = user.newList.id(req.params.id);
@@ -76,7 +76,7 @@ router.put('/:id', function(req, res){
 //======================
 //create a DELETE "/:id" route that deletes the list item
 router.delete('/:id', function(req, res) {
-  User.findById(req.params.userId)
+  User.findById(req.params.id)
     .exec(function (err, user){
       if (err) { console.log(err); }
 
