@@ -13,16 +13,16 @@ var authHelpers = require('../helpers/auth.js');
 //======================
 //create a POST "/" route that saves the list item to the logged in user
 router.post('/', function(req, res){
-  User.findById(req.params.id)
+  User.findById(req.params.userId)
     .exec(function (err, user){
       if (err) { console.log(err); }
 
-      const newList = {
+      const newList = new {
         name: req.body.name,
         completed: req.body.completed
       }
 
-      user.list.push(newList)
+      user.newList.push(newList)
 
       user.save(function (err) {
         if (err) console.log(err);
@@ -38,13 +38,13 @@ router.post('/', function(req, res){
 //======================
 //create a GET "/:id/edit" route that renders the list's edit page
 router.get('/:id/edit', function(req, res) {
-  User.findById(req.params.id)
+  User.findById(req.params.userId)
     .exec(function (err, user){
       if (err) { console.log(err); }
-      const newList = user.newList.id(req.params.id);
+      const list = user.list.id(req.params.id);
 
       res.render('lists/edit', {
-        newList: newList,
+        list: list,
         user: user
       });
     });
@@ -55,17 +55,17 @@ router.get('/:id/edit', function(req, res) {
 //======================
 //create a PUT "/:id" route that saves the changes from the list.
 router.put('/:id', function(req, res){
-  User.findById(req.params.id)
+  User.findById(req.params.userId)
     .exec(function (err, user){
       if (err) { console.log(err); }
-      const newList = user.newList.id(req.params.id);
+      const list = user.list.id(req.params.id);
 
-      newList.name = req.body.name
-      newList.completed = req.body.completed
+      list.name = req.body.name
+      list.completed = req.body.completed
       user.save();
 
       res.render('lists/show', {
-        newList: newList,
+        list: list,
         user: user
       });
     });
@@ -76,11 +76,11 @@ router.put('/:id', function(req, res){
 //======================
 //create a DELETE "/:id" route that deletes the list item
 router.delete('/:id', function(req, res) {
-  User.findById(req.params.id)
+  User.findById(req.params.userId)
     .exec(function (err, user){
       if (err) { console.log(err); }
 
-      user.newList.id(req.params.id).remove();
+      user.list.id(req.params.id).remove();
 
       user.save(function (err) {
         if (err) console.log(err);

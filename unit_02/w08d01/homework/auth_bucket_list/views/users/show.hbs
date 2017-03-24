@@ -4,16 +4,16 @@
 
 <ul>
   {{#each user.list}}
-    <li>Name: {{list.name}}</li>
-	<li>Completed: {{list.completed}}</li>
-	<a href="/users/{{user.id}}/lists/{{newList.id}}/edit">Edit Bucket List Item</a>
-	<form action="/users/{{user.id}}/lists/{{newList.id}}?_method=DELETE" method="POST">
+    <li>Name: {{this.name}}</li>
+	<li>Completed: {{this.completed}}</li>
+	<a href="/users/{{../user.id}}/lists/{{this.id}}/edit">Edit Bucket List Item</a>
+	<form action="/users/{{../user.id}}/lists/{{id}}?_method=DELETE" method="POST">
   		<input type="submit" value="Delete Bucket List Item"/>
 	</form>
   {{/each}}
 </ul>
 
-<a href="/users/{{user.id}}/lists/new">Add a new Bucket List item</a>
+<a href="/users/{{user.id}}/lists/{{id}}/edit">Add a new Bucket List item</a>
 
 <!-- <form action="/users/{{user.id}}/lists/" method="POST">
   <div>
