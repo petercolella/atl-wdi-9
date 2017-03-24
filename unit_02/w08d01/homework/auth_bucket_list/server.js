@@ -12,7 +12,7 @@ var mongoose = require('mongoose');
 
 var usersController = require('./controllers/users.js');
 var sessionsController = require('./controllers/sessions.js');
-
+var listsController = require('./controllers/lists.js');
 // require the list controller here
 
 var app = express();
