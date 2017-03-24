@@ -88,7 +88,7 @@ router.delete('/:id', function(req, res) {
     .exec(function (err, user){
       if (err) { console.log(err); }
 
-      user.project_ideas.id(req.params.id).remove();
+      user.projectIdeas.id(req.params.id).remove();
 
       user.save(function (err) {
         if (err) console.log(err);
@@ -107,7 +107,7 @@ router.get('/:id', function(req, res) {
   User.findById(req.params.userId)
     .exec(function (err, user){
       if (err) { console.log(err); }
-      const projectIdea = user.project_ideas.id(req.params.id);
+      const projectIdea = user.projectIdeas.id(req.params.id);
       res.render('project_ideas/show', {
         projectIdea: projectIdea,
         user: user

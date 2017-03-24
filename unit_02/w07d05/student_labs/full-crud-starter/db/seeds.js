@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/express-mongoose-lesson-starter');
+mongoose.connect('mongodb://localhost/full-crud-starter');
 
 var User = require('../models/user');
 var Item = require('../models/item');

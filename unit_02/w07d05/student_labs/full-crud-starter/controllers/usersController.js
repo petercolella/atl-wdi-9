@@ -10,7 +10,7 @@ router.get('/', function(req, res){
     .exec(function(err, users){
       if (err) { console.log(err); }
       console.log(users);
-      res.render('users/index', {
+      res.render('users/index.hbs', {
         users: users
       });
     });
@@ -78,7 +78,7 @@ router.delete('/:id', function(req, res){
   .exec(function(err, user) {
     if (err) console.log(err);
     console.log('User deleted!');
-    res.send("User deleted");
+    res.redirect('/users');
   });
 });
 
@@ -117,7 +117,7 @@ router.delete('/:userId/items/:id', function(req, res){
   })
   .exec(function(err, item){
     if (err) console.log(err);
-    res.send(item + " Item deleted");
+    res.redirect('/users');
   });
 });
 
