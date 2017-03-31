@@ -3,7 +3,7 @@ var express = require('express');
 router = express.Router();
 var User = require('../models/user.js');
 var List = require('../models/list.js');
-// var authHelpers = require('../helpers/auth.js');
+var authHelpers = require('../helpers/auth.js');
 
 //SHOW: create a GET "/" that displays all users on the index page
 router.get('/', function(req, res) {
