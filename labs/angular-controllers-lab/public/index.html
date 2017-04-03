@@ -5,9 +5,33 @@
     <title></title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.3/angular.min.js"></script>
     <script src="js/app.js"></script>
-    <script src="js/todosController.js"></script>
+    <script src="js/productsController.js"></script>
   </head>
   <body>
     {{'I ' + 'am ' + 'a ' + 'working ' + 'Angular.js ' + 'app!' }}
+  <div ng-controller="ProductsController as store">
+  <br>
+    <div ng-repeat="product in store.products | orderBy:'price'">
+      Product Name: {{product.name}} | Price: {{product.price | currency}} | Date Added: {{product.dateAdded | date}}
+    </div>
+    <br>
+    <div ng-controller="ReviewsController as review">
+      Displaying {{store.products.length}} products across {{review.productCategories.length}} categories.
+      <form ng-show="myVar">
+        <ul ng-repeat="category in review.productCategories">
+          <li>{{category}}</li>
+        </ul>
+      </form>
+      <button ng-click="toggle()">Hide and Show Categories</button>
+    </div>
+
+  <form id=add-product ng-submit="store.add()">
+    <input type="text" placeholder="New Product" ng-model="store.newProduct.name">
+    <input type="currency" placeholder="Price" ng-model="store.newProduct.price">
+    <input type="date" placeholder="Date" ng-model="store.newProduct.dateAdded">
+    <input type="submit" name="Add New Product">
+  </form>
+    
+  </div>
   </body>
 </html>
