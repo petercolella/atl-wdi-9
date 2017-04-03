@@ -642,10 +642,10 @@
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w09d04/morning_exercise">Morning Exercise</a>
     </td>
     <td>
-      Morning Exercise
+      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w10d01/morning_exercise">Morning Exercise</a>
     </td>
     <td>
-      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w10d01/morning_exercise">Morning Exercise</a>
+      Morning Exercise
     </td>
     <td>
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w10d02/morning_exercise">Morning Exercise</a>
@@ -662,6 +662,7 @@
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w09d04/student_labs/presidents-app-starter-code-single-app-version">Presidents Starter Code</a>
     </td>
     <td>
+<<<<<<< HEAD
       Webpack
     </td>
     <td>
@@ -670,6 +671,15 @@
     <td>
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w10d01/instructor_notes/angular_services.md">Angular Services</a>
       <!-- <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w10d02/instructor_notes/auth_broadcast_emit_on.md">Authentication Angular</a> -->
+=======
+        <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w10d01/instructor_notes/angular_services.md">Angular Services</a>
+    </td>
+    <td>
+    Webpack
+    </td>
+    <td>
+      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w09d05/instructor_notes/angular-ui-router.md">UI Router</a>
+>>>>>>> 9f026e42b030162cfc352a57500bb180126ffcb7
     </td>
     <td>
       Project Three Intro<br />
@@ -685,6 +695,7 @@
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w09d04/student_labs/presidents-app-starter-code-single-app-version">Presidents Starter Code</a>
     </td>
     <td>
+<<<<<<< HEAD
       Webpack
     </td>
     <td>
@@ -693,6 +704,15 @@
     <td>
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w10d01/instructor_notes/angular_services.md">Angular Services</a>
       <!-- <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w10d02/instructor_notes/auth_broadcast_emit_on.md">Authentication Angular</a> -->
+=======
+      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w10d01/instructor_notes/angular_services.md">Angular Services</a>
+    </td>
+    <td>
+      Webpack
+    </td>
+    <td>
+      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w09d05/instructor_notes/angular-ui-router.md">UI Router</a>
+>>>>>>> 9f026e42b030162cfc352a57500bb180126ffcb7
     </td>
     <td>
       Project Three
@@ -704,6 +724,7 @@
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w09d04/student_labs/criminals-starter-code-single-app">Criminals Starter Code</a>
     </td>
     <td>
+<<<<<<< HEAD
       Components
     </td>
     <td>
@@ -712,6 +733,15 @@
     <td>
       <a href="https://github.com/ATL-WDI-Curriculum/angular-forms">Angular Forms + Validations</a>
       <!-- <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w10d02/instructor_notes/auth_broadcast_emit_on.md">Authentication Angular</a> -->
+=======
+      <a href="https://github.com/ATL-WDI-Curriculum/angular-forms">Angular Forms + Validations</a>
+    </td>
+    <td>
+      Components
+    </td>
+    <td>
+      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w09d05/instructor_notes/finish_crud_with_http.md">Giphy with UI Router</a>
+>>>>>>> 9f026e42b030162cfc352a57500bb180126ffcb7
     </td>
     <td>
       Project Three
@@ -723,6 +753,7 @@
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w09d04/student_labs/criminals-starter-code-single-app">Criminals Starter Code</a>
     </td>
     <td>
+<<<<<<< HEAD
       Components
     </td>
     <td>
@@ -732,6 +763,15 @@
     <td>
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w10d03/student_labs/git_lab.md">Git Lab</a>
       <!-- <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w10d02/student_labs">Giphy with Angular + Auth</a> -->
+=======
+      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w10d03/student_labs/git_lab.md">Git Lab</a>
+    </td>
+    <td>
+      Components
+    </td>
+    <td>
+      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w09d05/student_labs/giphy_ang_starter">Giphy Lab</a>
+>>>>>>> 9f026e42b030162cfc352a57500bb180126ffcb7
     </td>
     <td>
       Project Three
@@ -746,7 +786,11 @@
       Homework
     </td>
     <td>
+<<<<<<< HEAD
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w09d05/homework">Homework</a>
+=======
+      Homework
+>>>>>>> 9f026e42b030162cfc352a57500bb180126ffcb7
     </td>
     <td>
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w10d01/homework">Homework</a>

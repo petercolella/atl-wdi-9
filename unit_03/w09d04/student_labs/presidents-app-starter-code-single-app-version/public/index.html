@@ -13,11 +13,18 @@
     <section ng-controller="PresidentsController as presidents">
       <h1>The Presidents of the United States of America</h1>
 
+      <form  ng-submit='presidents.deletePresident()'>
       <ul id="presidents">
         <li ng-repeat="president in presidents.all">
           <strong>{{president.name}}</strong> <em>({{president.start}} - {{president.end}})</em>
+          <input type="submit" value="X" style="color: red;" name="">
         </li>
       </ul>
+      </form>
+
+      <div ng-if="presidents.loadingAll">
+        Loading...
+      </div>
 
       <form class="add-president" ng-submit='presidents.addPresident()'>
         <div>
