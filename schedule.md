@@ -642,10 +642,10 @@
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w09d04/morning_exercise">Morning Exercise</a>
     </td>
     <td>
-      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w10d01/morning_exercise">Morning Exercise</a>
+      Morning Exercise / Review
     </td>
     <td>
-      Morning Exercise
+      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w10d01/morning_exercise">Morning Exercise</a>
     </td>
     <td>
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w10d02/morning_exercise">Morning Exercise</a>
@@ -675,7 +675,7 @@
         <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w10d01/instructor_notes/angular_services.md">Angular Services</a>
     </td>
     <td>
-    Webpack
+      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/angular_lessons/webpack-angular-babel/webpack-angular-babel.md">Webpack and Angular</a>
     </td>
     <td>
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w09d05/instructor_notes/angular-ui-router.md">UI Router</a>
@@ -708,7 +708,7 @@
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w10d01/instructor_notes/angular_services.md">Angular Services</a>
     </td>
     <td>
-      Webpack
+      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/angular_lessons/webpack-angular-babel/webpack-angular-babel.md">Webpack and Angular</a>
     </td>
     <td>
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w09d05/instructor_notes/angular-ui-router.md">UI Router</a>
@@ -754,6 +754,7 @@
     </td>
     <td>
 <<<<<<< HEAD
+<<<<<<< HEAD
       Components
     </td>
     <td>
@@ -765,6 +766,9 @@
       <!-- <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w10d02/student_labs">Giphy with Angular + Auth</a> -->
 =======
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w10d03/student_labs/git_lab.md">Git Lab</a>
+=======
+      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/angular_lessons/labs/criminals-lab-with-services-and-ng-forms">Services and Forms LAB</a>
+>>>>>>> 12ea09fd86fdceb94dc04ff94bd570dd6ceef658
     </td>
     <td>
       Components
