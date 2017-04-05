@@ -737,7 +737,7 @@
       <a href="https://github.com/ATL-WDI-Curriculum/angular-forms">Angular Forms + Validations</a>
     </td>
     <td>
-      Components
+      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/angular_lessons/angular-components/angular_components.md">Components</a>
     </td>
     <td>
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/unit_03/w09d05/instructor_notes/finish_crud_with_http.md">Giphy with UI Router</a>
@@ -771,7 +771,7 @@
 >>>>>>> 12ea09fd86fdceb94dc04ff94bd570dd6ceef658
     </td>
     <td>
-      Components
+      <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/blob/master/angular_lessons/angular-components/angular_components.md">Components</a>
     </td>
     <td>
       <a href="https://github.com/ATL-WDI-Curriculum/atl-wdi-9/tree/master/unit_03/w09d05/student_labs/giphy_ang_starter">Giphy Lab</a>
