@@ -4,21 +4,22 @@ angular.module('InfamousCriminals')
 CriminalsService.$inject = ['$http'];
 
 function CriminalsService($http) {
-	
-};
 
-function getCriminals() {
 	console.log('getCriminals is alive!');
-  
-  	var self = this;
-	self.greeting = 'getCriminals says Hi ';
+	  
+	  	var self = this;
+		self.greeting = 'getCriminals says Hi ';
 
-}
+	function getCriminals() {
 
-function addCriminal() {
+	}
 
-}
+	function addCriminal() {
 
-function deleteCriminal() {
+	}
 
-}
+	function deleteCriminal() {
+
+	}
+
+};

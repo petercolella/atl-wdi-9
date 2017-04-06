@@ -63,67 +63,73 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports) {
 
-function MoviesController() {
-    this.movieList = [{ title: 'Toy Story 3', year: 2010 }, { title: 'In Bruges', year: 2008 }, { title: 'Breakin 2: Electric Boogaloo', year: 1984 }, { title: 'Drumline', year: 2002 }, { title: 'The Bicycle Thief', year: 1948 }];
+function CriminalsListController(CriminalsService) {
+	var vm = this;
+
+	CriminalsService.getCriminals().then(function (response) {
+		console.log(response);
+		vm.criminalsList = response.data.criminals;
+		//vm.criminalsList = criminalsList;
+	});
+
+	vm.greeting = 'hello, there!';
+	vm.message = CriminalsService.message;
 }
 
-module.exports = MoviesController;
+CriminalsListController.$inject = ['CriminalsService'];
+
+module.exports = CriminalsListController;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function ReviewsController() {
-    this.reviewList = [{ content: 'It was good.' }, { content: 'Meh.' }, { content: 'Did not like it.' }];
-}
+const angular = __webpack_require__(5);
 
-module.exports = ReviewsController;
+angular.module('criminalsApp', []);
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-const angular = __webpack_require__(6);
+var criminalsListTemplate = __webpack_require__(6);
+var criminalsListController = __webpack_require__(0);
 
-angular.module('moviesApp', []);
+var CriminalsListComponent = {
+	template: criminalsListTemplate,
+	controller: criminalsListController
+};
+
+angular.module('criminalsApp').component('criminalsList', CriminalsListComponent);
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-let moviesTemplate = __webpack_require__(7);
-let moviesController = __webpack_require__(0);
+angular.module('criminalsApp').service('CriminalsService', CriminalsService);
 
-let MoviesComponent = {
-    template: moviesTemplate,
-    controller: moviesController
-};
+CriminalsService.$inject = ['$http'];
 
-angular.module('moviesApp').component('movies', MoviesComponent);
+function CriminalsService($http) {
+
+	var self = this;
+
+	self.getCriminals = function () {
+		console.log('getCriminals is working');
+
+		return $http.get('/criminals');
+	};
+}
 
 /***/ }),
 /* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-let reviewsTemplate = __webpack_require__(8);
-let reviewsController = __webpack_require__(1);
-
-let ReviewsComponent = {
-    template: reviewsTemplate,
-    controller: reviewsController
-};
-
-angular.module('moviesApp').component('reviews', ReviewsComponent);
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports) {
 
 /**
@@ -33500,34 +33506,27 @@ $provide.value("$locale", {
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(5);
+__webpack_require__(4);
 module.exports = angular;
 
 
 /***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = "<div>\n\t<br>\n\t{{$ctrl.greeting}}\n\t{{$ctrl.message}}\n\t<br>\n\t<div ng-repeat=\"criminal in $ctrl.criminalsList\">\n\t\t<span>Name: {{criminal.criminalName}}</span>\n\t\t<span>City: {{criminal.city}}</span>\n\t</div>\n\t<br>\n</div>";
+
+/***/ }),
 /* 7 */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\n    <h1>Movies:</h1>\n    <div ng-repeat=\"movie in $ctrl.movieList\">\n\n        <h3>Title: {{movie.title}}</h3>\n        <h3>Year: {{movie.year}}</h3>\n\n        <reviews></reviews>\n        <br>\n\n    </div>\n</div>";
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
-module.exports = "<div>\n    <h3>Reviews:</h3>\n    <ul>\n        <li ng-repeat=\"review in $ctrl.reviewList\">{{review.content}}</li>\n    </ul>\n</div>";
-
-/***/ }),
-/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(1);
 __webpack_require__(2);
-__webpack_require__(3);
 __webpack_require__(0);
-__webpack_require__(4);
-module.exports = __webpack_require__(1);
+module.exports = __webpack_require__(3);
 
 
 /***/ })

@@ -8,6 +8,10 @@ function CriminalsService($http) {
     var vm = this;
 
     vm.getCriminals = function () {
+        console.log('getCriminals is alive!');
+    
+        var self = this;
+        self.greeting = 'getCriminals says Hi ';
         return $http
             .get('/criminals')
             .then(function(response){
