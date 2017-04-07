@@ -21,7 +21,7 @@ function CriminalsController(CriminalsService) {
 		CriminalsService
 			.loadAll()
 			.then(function resolve(response) {
-				console.log(response);
+				// console.log(response);
 				vm.criminals = response.data.criminals;
 				vm.loading = false;
 			});

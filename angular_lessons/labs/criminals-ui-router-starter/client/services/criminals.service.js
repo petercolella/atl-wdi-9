@@ -8,12 +8,14 @@ function CriminalsService($http) {
 	const self = this;
 
 	// WHAT THIS SERVICE DOES / HAS AVAILABLE TO CALL
+	self.addNew = addNew;
 	self.loadAll = loadAll;
 	self.loadCurrent = loadCurrent;
+	self.newCriminal = {};
 
 
 	// HOW IT DOES STUFF
-	function addNewCriminal(newCriminal) {
+	function addNew(newCriminal) {
 		return $http.post('/api/criminals', newCriminal);
 	}
 

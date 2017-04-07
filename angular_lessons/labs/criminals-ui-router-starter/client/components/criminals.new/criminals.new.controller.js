@@ -1,22 +1,25 @@
-CriminalsNewController.$inject = [/*something*/'CriminalsService'];
+CriminalsNewController.$inject = ['CriminalsService', '$state'];
 
-function CriminalsNewController(CriminlsService) {
+function CriminalsNewController(CriminalsService, $state) {
 	const vm = this;
 
+	vm.addNewCriminal = addNewCriminal;
 	vm.newCriminal = {};
 
 	activate();
 
 	function activate() {
-		addNewCriminal();
-	}
+		console.log('this thing better fucking work this time');
+	};
 
 	function addNewCriminal() {
-		console.log(newCriminal.data);
+		console.log(newCriminal);
 		CriminalsService
-			.addCurrent(/*something*/vm.newCriminal)
+			.addNew(vm.newCriminal)
 			.then(function resolve(response) {
-				vm.newCriminal.push('criminals');
+				console.log(response);
+				vm.newCriminal = {};
+				$state.go('criminals')
 			});
 	}
 }

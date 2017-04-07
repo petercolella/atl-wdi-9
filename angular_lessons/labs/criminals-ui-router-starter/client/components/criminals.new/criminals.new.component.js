@@ -1,5 +1,5 @@
 const controller = require('./criminals.new.controller.js');
-const template = require('/criminals.new.html');
+const template = require('./criminals.new.html');
 
 const component = {
 	controller: controller,
