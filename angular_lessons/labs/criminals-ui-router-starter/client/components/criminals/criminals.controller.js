@@ -21,7 +21,10 @@ function CriminalsController(CriminalsService) {
 		CriminalsService
 			.loadAll()
 			.then(function resolve(response) {
+<<<<<<< HEAD
 				// console.log(response);
+=======
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 				vm.criminals = response.data.criminals;
 				vm.loading = false;
 			});

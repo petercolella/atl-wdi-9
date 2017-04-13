@@ -72,7 +72,13 @@
 
 AboutController.$inject = [];
 
+<<<<<<< HEAD
 function AboutController() {}
+=======
+function AboutController() {
+	const vm = this;
+}
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 
 module.exports = AboutController;
 
@@ -80,6 +86,7 @@ module.exports = AboutController;
 /* 1 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 CriminalsShowController.$inject = ['$stateParams', 'CriminalsService'];
 
 function CriminalsShowController($stateParams, CriminalsService) {
@@ -97,16 +104,39 @@ function CriminalsShowController($stateParams, CriminalsService) {
 		console.log($stateParams);
 		CriminalsService.loadCurrent($stateParams.criminalId).then(function resolve(response) {
 			vm.current = response.data.criminal;
+=======
+CriminalsNewController.$inject = ['$state', 'CriminalsService'];
+
+function CriminalsNewController($state, CriminalsService) {
+	const vm = this;
+
+	vm.createCriminal = createCriminal;
+	vm.newCriminal = {};
+
+	activate();
+
+	function activate() {}
+
+	function createCriminal() {
+		CriminalsService.create(vm.newCriminal).then(function resolve(response) {
+			const id = response.data.criminal._id;
+			$state.go('criminalsShow', { criminalId: id });
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 		});
 	}
 }
 
+<<<<<<< HEAD
 module.exports = CriminalsShowController;
+=======
+module.exports = CriminalsNewController;
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 CriminalsNewController.$inject = ['CriminalsService', '$state'];
 
 function CriminalsNewController(CriminalsService, $state) {
@@ -114,10 +144,19 @@ function CriminalsNewController(CriminalsService, $state) {
 
 	vm.addNewCriminal = addNewCriminal;
 	vm.newCriminal = {};
+=======
+CriminalsShowController.$inject = ['$stateParams', 'CriminalsService'];
+
+function CriminalsShowController($stateParams, CriminalsService) {
+	const vm = this;
+
+	vm.current = {};
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 
 	activate();
 
 	function activate() {
+<<<<<<< HEAD
 		console.log('this thing better fucking work this time');
 	};
 
@@ -127,11 +166,25 @@ function CriminalsNewController(CriminalsService, $state) {
 			console.log(response);
 			vm.newCriminal = {};
 			$state.go('criminals');
+=======
+		loadCurrentCriminal();
+	}
+
+	function loadCurrentCriminal() {
+		console.log($stateParams);
+
+		CriminalsService.loadCurrent($stateParams.criminalId).then(function resolve(response) {
+			vm.current = response.data.criminal;
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 		});
 	}
 }
 
+<<<<<<< HEAD
 module.exports = CriminalsNewController;
+=======
+module.exports = CriminalsShowController;
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 
 /***/ }),
 /* 3 */
@@ -156,7 +209,10 @@ function CriminalsController(CriminalsService) {
 	// HOW IT DOES STUFF
 	function loadAllCriminals() {
 		CriminalsService.loadAll().then(function resolve(response) {
+<<<<<<< HEAD
 			// console.log(response);
+=======
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 			vm.criminals = response.data.criminals;
 			vm.loading = false;
 		});
@@ -172,9 +228,13 @@ module.exports = CriminalsController;
 HomeController.$inject = [];
 
 function HomeController() {
+<<<<<<< HEAD
 	// const vm = this;
 
 	// activate();
+=======
+	const vm = this;
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 }
 
 module.exports = HomeController;
@@ -193,6 +253,7 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
 	$stateProvider.state('home', {
 		url: '/',
 		template: '<home></home>'
+<<<<<<< HEAD
 		// template: '<h1>Home</h1><a ui-sref="about">About</a>'
 	}).state('about', {
 		url: '/about',
@@ -212,6 +273,23 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
 		url: '/criminals/:criminalId',
 		template: '<criminals-edit></criminals-edit>'
 	});
+=======
+	}).state('about', {
+		url: '/about',
+		// template: '<about></about>' // LAB Goal #1 -- get this line to work
+		template: '<h1>About</h1><a ui-sref="home">Home</a>'
+	}).state('criminals', {
+		url: '/criminals',
+		template: '<criminals></criminals>'
+	}).state('criminalsNew', {
+		url: '/criminals/new',
+		template: '<criminals-new></criminals-new>'
+	}).state('criminalsShow', {
+		url: '/criminals/:criminalId',
+		template: '<criminals-show></criminals-show>'
+	});
+
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 	$urlRouterProvider.otherwise('/');
 }
 
@@ -222,12 +300,20 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
 const controller = __webpack_require__(0);
 const template = __webpack_require__(15);
 
+<<<<<<< HEAD
 const AboutComponent = {
+=======
+const component = {
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 	controller: controller,
 	template: template
 };
 
+<<<<<<< HEAD
 angular.module('criminals').component('about', AboutComponent);
+=======
+angular.module('criminals').component('about', component);
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 
 /***/ }),
 /* 7 */
@@ -241,7 +327,11 @@ const component = {
 	template: template
 };
 
+<<<<<<< HEAD
 angular.module('criminals').component('criminalsShow', component);
+=======
+angular.module('criminals').component('criminalsNew', component);
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 
 /***/ }),
 /* 8 */
@@ -255,7 +345,13 @@ const component = {
 	template: template
 };
 
+<<<<<<< HEAD
 angular.module('criminals').component('criminalsNew', component);
+=======
+angular.module('criminals')
+// call this with <criminals-show></criminals-show>
+.component('criminalsShow', component);
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 
 /***/ }),
 /* 9 */
@@ -264,12 +360,20 @@ angular.module('criminals').component('criminalsNew', component);
 const controller = __webpack_require__(3);
 const template = __webpack_require__(18);
 
+<<<<<<< HEAD
 const CriminalsComponent = {
+=======
+const component = {
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 	controller: controller,
 	template: template
 };
 
+<<<<<<< HEAD
 angular.module('criminals').component('criminals', CriminalsComponent);
+=======
+angular.module('criminals').component('criminals', component);
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 
 /***/ }),
 /* 10 */
@@ -278,12 +382,20 @@ angular.module('criminals').component('criminals', CriminalsComponent);
 const controller = __webpack_require__(4);
 const template = __webpack_require__(19);
 
+<<<<<<< HEAD
 const Component = {
+=======
+const component = {
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 	controller: controller,
 	template: template
 };
 
+<<<<<<< HEAD
 angular.module('criminals').component('home', Component);
+=======
+angular.module('criminals').component('home', component);
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 
 /***/ }),
 /* 11 */
@@ -297,6 +409,7 @@ function CriminalsService($http) {
 	const self = this;
 
 	// WHAT THIS SERVICE DOES / HAS AVAILABLE TO CALL
+<<<<<<< HEAD
 	self.addNew = addNew;
 	self.editCurrent = editCurrent;
 	self.loadAll = loadAll;
@@ -310,6 +423,15 @@ function CriminalsService($http) {
 
 	function editCurrent(id) {
 		return $http.patch('/api/criminals/' + id);
+=======
+	self.create = create;
+	self.loadAll = loadAll;
+	self.loadCurrent = loadCurrent;
+
+	// HOW IT DOES STUFF
+	function create(criminalData) {
+		return $http.post('/api/criminals', criminalData);
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 	}
 
 	function loadAll() {
@@ -38399,31 +38521,51 @@ module.exports = angular;
 /* 15 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 module.exports = "<div class=\"about\">\n\t<h1>About:</h1>\n\t<h2>Here at Infamous Criminals we strive to show criminals and their crimes.</h2>\n</div>";
+=======
+module.exports = "<h1>About</h1>\n";
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 
 /***/ }),
 /* 16 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 module.exports = "<div class=\"show\">\n\tName: {{$ctrl.current.name}}\n\t<br>\n\tCrime: {{$ctrl.current.crime}}\n\t<br>\n\t<a ui-sref=\"criminalsEdit({criminalId: criminal._id})\">Click to edit this criminal.</a>\n</div>";
+=======
+module.exports = "<div>\n\t<form ng-submit=\"$ctrl.createCriminal()\">\n\t\t<label for=\"name\">Name:</label>\n\t\t<input id=\"name\" type=\"text\" ng-model=\"$ctrl.newCriminal.name\" />\n\n\t\t<label for=\"name\">Crime:</label>\n\t\t<input id=\"crime\" type=\"text\" ng-model=\"$ctrl.newCriminal.crime\" />\n\n\t\t<button type=\"submit\">Create</button>\n\t</form>\n</div>\n";
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 
 /***/ }),
 /* 17 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 module.exports = "<br>\n\n\t<form ng-submit=\"$ctrl.addNewCriminal()\" id=\"newCriminal\">\n\t\t<div>\n\t\t\t<label for=\"newCriminal-name\">Name: </label>\n\t\t\t<input type=\"text\" ng-model=\"$ctrl.newCriminal.name\" placeholder=\"Name\">\n\t\t</div>\n\t\t<div>\n\t\t\t<label for=\"newCriminal-crime\">Crime: </label>\n\t\t\t<input type=\"text\" ng-model=\"$ctrl.newCriminal.crime\" placeholder=\"Crime\">\n\t\t</div>\n\t\t<div>\n\t\t\t<input type=\"submit\" value=\"New Criminal\">\n\t\t</div>\n\t</form>\t";
+=======
+module.exports = "<div>\n\tName: {{ $ctrl.current.name }}\n\t<br />\n\tCrime: {{ $ctrl.current.crime }}\n</div>\n";
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 
 /***/ }),
 /* 18 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 module.exports = "<ul class=\"criminals\">\n\t<li ng-show=\"$ctrl.loading\">\n\t\t<strong>Loading...</strong>\n\t</li>\n\n  <li ng-hide=\"$ctrl.loading\" ng-repeat=\"criminal in $ctrl.criminals\">\n    <strong>{{criminal.name}}</strong>\n\n\t\t<!-- Reference for Gerry -->\n    <!-- <em>{{criminal.crime}}</em> -->\n    \n    <span ng-if=\"criminal.status\" class='status {{criminal.status | lowercase }}'>{{criminal.status | uppercase}}</span>\n\n    <a ui-sref=\"criminalsShow({criminalId: criminal._id})\">Click to see their crime (in criminals#show)</a>\n  </li>\n</ul>\n";
+=======
+module.exports = "<ul class=\"criminals\">\n\t<li ng-show=\"$ctrl.loading\">\n\t\t<strong>Loading...</strong>\n\t</li>\n\n  <li ng-hide=\"$ctrl.loading\" ng-repeat=\"criminal in $ctrl.criminals\">\n    <strong>{{criminal.name}}</strong>\n\n    <a ui-sref=\"criminalsShow({ criminalId: criminal._id })\">Click to see their crime (in criminals#show)</a>\n  </li>\n</ul>\n";
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 
 /***/ }),
 /* 19 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
 module.exports = "<div class=\"home\">\n\t<h1>Home</h1>\n\t<!-- <h2>Another</h2> -->\t\n</div>\n";
+=======
+module.exports = "<div class=\"home\">\n\t<h1>Home Component</h1>\n\t<h2>Another</h2>\n</div>\n";
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
 
 /***/ }),
 /* 20 */

@@ -19,8 +19,12 @@
     "jade": "~1.11.0",
     "method-override": "^2.3.4",
     "mongoose": "^4.0.7",
+<<<<<<< HEAD
     "morgan": "~1.6.1",
     "webpack": "^2.3.3"
+=======
+    "morgan": "~1.6.1"
+>>>>>>> 64bdf58ad785d374ccb2a68cf6448fd5d3ccd61a
   },
   "license": "ISC",
   "devDependencies": {
