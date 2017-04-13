@@ -1,0 +1,13 @@
+<form ng-submit="$ctrl.editCurrentCriminal()" id="editCriminal">
+	<div>
+		<label for="editCriminal-name">Name: {{$ctrl.current.name}}</label>
+		<input type="text" ng-model="$ctrl.editCriminal.name" name="">
+	</div>	
+	<div>
+		<label for="editCriminal-crime">Crime: {{$ctrl.current.crime}}</label>
+		<input type="text" ng-model="$ctrl.editCriminal.crime" name="">
+	</div>
+	<div>
+		<input type="submit" value="Edit Criminal" name="">
+	</div>
+</form>

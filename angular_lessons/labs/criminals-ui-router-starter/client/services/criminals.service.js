@@ -9,6 +9,7 @@ function CriminalsService($http) {
 
 	// WHAT THIS SERVICE DOES / HAS AVAILABLE TO CALL
 	self.addNew = addNew;
+	self.editCurrent = editCurrent;
 	self.loadAll = loadAll;
 	self.loadCurrent = loadCurrent;
 	self.newCriminal = {};
@@ -17,6 +18,10 @@ function CriminalsService($http) {
 	// HOW IT DOES STUFF
 	function addNew(newCriminal) {
 		return $http.post('/api/criminals', newCriminal);
+	}
+
+	function editCurrent(id) {
+		return $http.patch('/api/criminals/' + id);
 	}
 
 	function loadAll() {

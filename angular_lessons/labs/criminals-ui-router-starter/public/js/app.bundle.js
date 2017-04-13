@@ -208,6 +208,9 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
 		url: '/new',
 		template: '<criminals-new></criminals-new>'
 		// template: '<h1>New Criminal</h1>'
+	}).state('criminalsEdit', {
+		url: '/criminals/:criminalId',
+		template: '<criminals-edit></criminals-edit>'
 	});
 	$urlRouterProvider.otherwise('/');
 }
@@ -295,6 +298,7 @@ function CriminalsService($http) {
 
 	// WHAT THIS SERVICE DOES / HAS AVAILABLE TO CALL
 	self.addNew = addNew;
+	self.editCurrent = editCurrent;
 	self.loadAll = loadAll;
 	self.loadCurrent = loadCurrent;
 	self.newCriminal = {};
@@ -302,6 +306,10 @@ function CriminalsService($http) {
 	// HOW IT DOES STUFF
 	function addNew(newCriminal) {
 		return $http.post('/api/criminals', newCriminal);
+	}
+
+	function editCurrent(id) {
+		return $http.patch('/api/criminals/' + id);
 	}
 
 	function loadAll() {
@@ -38397,7 +38405,7 @@ module.exports = "<div class=\"about\">\n\t<h1>About:</h1>\n\t<h2>Here at Infamo
 /* 16 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"show\">\n\tName: {{$ctrl.current.name}}\n\t<br>\n\tCrime: {{$ctrl.current.crime}}\n</div>";
+module.exports = "<div class=\"show\">\n\tName: {{$ctrl.current.name}}\n\t<br>\n\tCrime: {{$ctrl.current.crime}}\n\t<br>\n\t<a ui-sref=\"criminalsEdit({criminalId: criminal._id})\">Click to edit this criminal.</a>\n</div>";
 
 /***/ }),
 /* 17 */

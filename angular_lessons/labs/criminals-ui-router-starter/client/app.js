@@ -31,6 +31,10 @@ function uiRouterSetup($stateProvider, $urlRouterProvider) {
 			template: '<criminals-new></criminals-new>'
 			// template: '<h1>New Criminal</h1>'
 		})
+		.state('criminalsEdit', {
+			url: '/criminals/:criminalId',
+			template: '<criminals-edit></criminals-edit>'
+		})
 	$urlRouterProvider.otherwise('/');
 }
 
