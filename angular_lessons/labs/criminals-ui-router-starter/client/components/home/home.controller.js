@@ -2,6 +2,7 @@ HomeController.$inject = [];
 
 function HomeController() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// const vm = this;
 
 	// activate();
@@ -10,6 +11,18 @@ function HomeController() {
 module.exports = HomeController;
 =======
 	const vm = this;
+=======
+
+  // WHAT THIS CONTROLLER HAS / DOES THAT IS CONNECTED TO THE VIEW
+  const vm = this;
+
+  // activate === BEST PRACTICE, ALWAYS DO IT, EVEN IF EMPTY
+  activate();
+
+  function activate() {
+
+  }
+>>>>>>> 5589bc133bafa8ca4d606b05ef423dfa48528eb5
 }
 
 module.exports = HomeController;
