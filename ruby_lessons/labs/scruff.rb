@@ -25,3 +25,38 @@ require 'pry'
   owner: 'Jack Keil'
 }
 
+# 1)
+def printsValueOfSpecies(dog)
+  puts "#{dog[:species]}"
+end
+
+printsValueOfSpecies(@scruff)
+
+# 2)
+def printsNameAndRatingOfBearFriendHash(dog)
+  puts "#{dog[:bear_friend][:name]} #{dog[:bear_friend][:rating]}"
+end
+
+printsNameAndRatingOfBearFriendHash(@scruff)
+
+# 3)
+def printsSlogan(dog)
+  if dog[:slogan] != nil
+    puts "#{dog[:slogan]}"
+  else
+    puts "guess there's no slogan here!!"
+  end
+end
+
+printsSlogan(@scruff)
+
+# 4)
+def printsKeyValuePair(dog)
+  dog.each do |key, value|
+    if value == "Scruff McGruff"
+      puts "#{key} #{value}"
+    end
+  end
+end
+
+printsKeyValuePair(@scruff)
