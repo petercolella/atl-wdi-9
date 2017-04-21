@@ -1,0 +1,19 @@
+<h1>Comments#index</h1>
+
+<h2><%= @article.title.capitalize %>Comments</h2>
+<!-- <p>Find me in app/views/comments/index.html.erb</p> -->
+
+<!-- <p><#%= @message2 %></p> -->
+
+<ul>
+	<% @comments.each do |comment| %>
+		<li>
+			Title: <%= comment.title %>
+			<br>
+			Content: <%= comment.content %>
+			<br>
+			Date: <%= comment.date_posted %>
+		</li>
+		<br>
+	<% end %>
+</ul>
