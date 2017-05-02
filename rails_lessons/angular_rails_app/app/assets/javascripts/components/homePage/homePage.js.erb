@@ -1,0 +1,20 @@
+angular
+  .module('myAppName')
+  .component('homePage', {
+    templateUrl: '<%= asset_path("components/homePage/homePage") %>',
+    controller: HomePageController
+  });
+
+HomePageController.$inject = ['$http'];
+
+function HomePageController($http) {
+  var vm = this;
+
+  vm.notes = []
+
+  $http.get('/api/notes').then(function(resp) {
+  	vm.notes = resp.data
+  })
+
+  vm.message = 'Hello World!';
+}

@@ -1,0 +1,25 @@
+<h1>Home Page</h1>
+<p>
+  {{ $ctrl.message }}
+</p>
+
+<ol>
+	<li ng-repeat="note in $ctrl.notes">
+	    <h2>{{ note.title }}</h2>
+	    <p>{{ note.body }}</p>
+	</li>
+</ol>
+
+<!-- //////////////////////////////////////// -->
+
+<!-- In app/assets/javascripts/components/homePage/homePage.html -->
+<!-- <h1>Home Page</h1>
+<p>
+  {{ $ctrl.message }}
+</p>
+
+<p ng-repeat="note in $ctrl.notes">
+  Title: {{ note.title }}
+  <br/>
+  Body: {{ note.body }}
+</p> -->
