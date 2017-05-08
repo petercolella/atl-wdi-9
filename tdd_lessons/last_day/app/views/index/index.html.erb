@@ -1,0 +1,9 @@
+<h1 id="home-page-header">Here Are The Students</h1>
+
+<div id="student-list">
+	<% @student_list.each do |student| %>
+		<div id="student">
+			<span><%= student.name %></span>
+		</div>
+	<% end %>
+</div>
